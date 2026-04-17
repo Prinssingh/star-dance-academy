@@ -25,11 +25,11 @@ const videos = [
   },
   {
     id: 3,
-    title: "Kide republic day Showcase",
+    title: "Kids republic day Showcase",
     description:
       "Our little stars shine bright in this heartwarming republic day performance filled with joy and pure talent.",
       embed: "https://www.youtube.com/embed/CgZq_ayV_jQ",
-    tag: "Kide republic day",
+    tag: "Kids republic day",
     tagColor: "dark",
   },
   {

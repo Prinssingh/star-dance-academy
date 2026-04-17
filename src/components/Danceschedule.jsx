@@ -186,38 +186,30 @@ function BatchCard({ batch, index }) {
 
       {/* Fee top-right */}
       <div className="absolute right-4 top-4 text-right">
-        <p
-          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
-        >
+        <div className="grid grid-cols-1">
+
           {typeof batch.feeOriginal === "number" && (
             <span
-              className={`line-through mr-2 text-[1.22rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
+              className={`line-through mr-2 text-[0.875rem] md:text-[1rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
             >
               ₹{batch.feeOriginal.toLocaleString()}/-
             </span>
           )}
-
+        <p
+          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
+        >
+          
           {typeof batch.fee === "number" && (
-            <span>₹{batch.fee.toLocaleString()}</span>
+            <span className="text-[1.5rem]">₹{batch.fee.toLocaleString()}</span>
           )}
         </p>
-        {/* <p
-          className={`bebas text-2xl tracking-wide font-semibold ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
-        >
-          <span
-            className={`text-xs align-top mt-0.5 inline-block ${isSpecial ? "text-white/70" : "text-gray-400"}`}
-          >
-            ₹ 
-            ₹
-          </span>
-          {batch.fee?.toLocaleString()}
-        </p> */}
 
         <p
           className={`text-[9px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
         >
           / month
         </p>
+        </div>
       </div>
 
       <div
