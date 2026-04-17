@@ -65,7 +65,7 @@ const NotFound = () => {
         {/* Button */}
         <button
           onClick={handleGoHome}
-          className="group relative cursor-pointer text-white inline-flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+          className="group relative cursor-pointer text-white inline-flex items-center justify-center bg-gradient-to-r from-primary to-secondary px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
         >
           Back to Home
           <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity" />

@@ -1,8 +1,33 @@
 "use client";
 
 import { useState } from "react";
+const Newmember = [
+  {
+    id: "registration",
+    name: "Registration Fee",
+    time: "-",
+    duration: "-",
+    fee: 500,
+    icon: "📝",
+    badge: "Mandatory",
+    accent: "orange",
+    special: false,
+  },
+];
 
 const batches = [
+  {
+    id: "personal",
+    session: "Custom",
+    name: "Personal Class",
+    time: "Flexible",
+    duration: "Flexible",
+    fee: 2500,
+    icon: "🧑‍🏫",
+    badge: "1-on-1",
+    accent: "dark", // make sure gold exists in accentStyles
+    special: true,
+  },
   {
     id: "morning",
     session: "Morning",
@@ -45,7 +70,8 @@ const batches = [
     name: "Zumba Batch",
     time: "06:00 – 07:00 PM",
     duration: "60 min",
-    fee: 1300,
+    feeOriginal: 1800,
+    fee: 1500,
     icon: "🎵",
     badge: "Fitness Dance",
     accent: "pink",
@@ -67,13 +93,44 @@ const batches = [
     id: "special",
     session: "Evening",
     name: "Special Batch",
-    time: "08:00 – 09:00 PM",
+    time: "08:00 – 09:30 PM",
     duration: "60 min",
+    feeOriginal: 2000,
     fee: 1800,
     icon: "⭐",
     badge: "Premium",
     accent: "special",
     special: true,
+  },
+];
+
+const MEMBERSHIPS = [
+  {
+    id: "m3",
+    name: "3 Months Plan",
+    duration: "3 Months",
+    feeOriginal: 4500,
+    fee: 3500,
+    icon: "💃",
+    accent: "pink",
+  },
+  {
+    id: "m6",
+    name: "6 Months Plan",
+    duration: "6 Months",
+    feeOriginal: 9000,
+    fee: 6500,
+    icon: "🔥",
+    accent: "purple",
+  },
+  {
+    id: "m12",
+    name: "1 Year Plan",
+    duration: "12 Months",
+    feeOriginal: 18000,
+    fee: 12000,
+    icon: "🏆",
+    accent: "special",
   },
 ];
 
@@ -130,15 +187,32 @@ function BatchCard({ batch, index }) {
       {/* Fee top-right */}
       <div className="absolute right-4 top-4 text-right">
         <p
+          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
+        >
+          {typeof batch.feeOriginal === "number" && (
+            <span
+              className={`line-through mr-2 text-[1.22rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
+            >
+              ₹{batch.feeOriginal.toLocaleString()}/-
+            </span>
+          )}
+
+          {typeof batch.fee === "number" && (
+            <span>₹{batch.fee.toLocaleString()}</span>
+          )}
+        </p>
+        {/* <p
           className={`bebas text-2xl tracking-wide font-semibold ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
         >
           <span
             className={`text-xs align-top mt-0.5 inline-block ${isSpecial ? "text-white/70" : "text-gray-400"}`}
           >
+            ₹ 
             ₹
           </span>
-          {batch.fee.toLocaleString()}
-        </p>
+          {batch.fee?.toLocaleString()}
+        </p> */}
+
         <p
           className={`text-[9px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
         >
@@ -184,7 +258,7 @@ export default function DanceSchedule() {
 
       <div className="relative z-10 w-full ">
         {/* HEADER */}
-        <div className="text-center py-20  grid justify-center items-center  mb-14 fade-up  pt-6 relative">
+        <div className="text-center py-20 grid justify-center items-center  mb-14 fade-up  pt-6 relative">
           {/* Background image */}
           <div
             className="absolute inset-0 -z-10  pointer-events-none"
@@ -275,16 +349,12 @@ export default function DanceSchedule() {
                   <p
                     className={`bebas text-4xl tracking-wide font-semibold "}`}
                   >
-                    <span
-                      className={`text-xs align-top mt-0.5 inline-block`}
-                    >
+                    <span className={`text-xs align-top mt-0.5 inline-block`}>
                       ₹
                     </span>
                     555
                   </p>
-                  <p
-                    className={`text-[9px] dmsans uppercase tracking-wider }`}
-                  >
+                  <p className={`text-[9px] dmsans uppercase tracking-wider }`}>
                     / month
                   </p>
                 </div>
@@ -334,6 +404,57 @@ export default function DanceSchedule() {
                 </div>
               </div>
 
+               {/* new ragistrations */}
+              <div className="flex flex-col mb-3 gap-3">
+                {/* <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#f28b00]/10 flex items-center justify-center text-lg">
+                    📝
+                  </div>
+                  <div>
+                    <h2 className="bebas text-3xl tracking-wider text-[#1a1a1a]">
+                      New Member
+                    </h2>
+                    <p className="text-[11px] text-gray-400 uppercase tracking-widest dmsans">
+                      One-Time Fee
+                    </p>
+                  </div>
+                </div> */}
+
+                {Newmember.map((n, i) => (
+                  <div
+                    key={n.id}
+                    className="flex items-center justify-between rounded-2xl px-5 py-4 bg-white border border-black/5 hover:shadow-md transition-all"
+                  >
+                    {/* LEFT */}
+                    <div className="flex items-center gap-4">
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl bg-[#f28b00]/10">
+                        {n.icon}
+                      </div>
+
+                      <div>
+                        <p className="font-bold text-base playfair text-[#1a1a1a]">
+                          {n.name}
+                        </p>
+                        <p className="text-xs text-gray-400 dmsans">
+                          {n.badge}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* RIGHT */}
+                    <div className="text-right">
+                      <p className="bebas text-3xl tracking-wide text-[#1a1a1a]">
+                        ₹{n.fee.toLocaleString()}/-
+                      </p>
+
+                      <p className="text-[10px] dmsans uppercase tracking-wider text-gray-400">
+                        / one-time
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <div className="flex flex-col gap-3">
                 {batches.map((b, i) => {
                   const isSpecial = b.accent === "special";
@@ -374,17 +495,117 @@ export default function DanceSchedule() {
                         <p
                           className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#1a1a1a]"}`}
                         >
+                          {typeof b.feeOriginal === "number" && (
+                            <span
+                              className={`line-through mr-2 text-[1.22rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
+                            >
+                              ₹{b.feeOriginal.toLocaleString()}/-
+                            </span>
+                          )}
+
+                          {typeof b.fee === "number" && (
+                            <span>₹{b.fee.toLocaleString()}</span>
+                          )}
+                        </p>
+
+                        {/* <p
+                          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#1a1a1a]"}`}
+                        >
                           <span
                             className={`text-sm align-top mt-1.5 inline-block ${isSpecial ? "text-white/70" : "text-gray-400"}`}
                           >
                             ₹
                           </span>
                           {b.fee.toLocaleString()}
-                        </p>
+                        </p> */}
                         <p
                           className={`text-[10px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
                         >
                           / month
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+             
+
+              <div className="flex flex-col mt-9 gap-3">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-[#f28b00]/10 flex items-center justify-center text-lg">
+                    ₹
+                  </div>
+                  <div>
+                    <h2 className="bebas text-3xl tracking-wider text-[#1a1a1a]">
+                      Dance Memberships
+                    </h2>
+                    <p className="text-[11px] text-gray-400 uppercase tracking-widest dmsans">
+                      Fees
+                    </p>
+                  </div>
+                </div>
+                {MEMBERSHIPS.map((m, i) => {
+                  const isSpecial = m.accent === "special";
+
+                  return (
+                    <div
+                      key={m.id}
+                      className={`flex items-center justify-between rounded-2xl px-5 py-5 transition-all duration-200 group ${
+                        isSpecial
+                          ? "bg-gradient-to-r from-[#f6466c] to-[#c8234a] shadow-lg"
+                          : "bg-white border border-black/5 hover:shadow-md hover:translate-x-1"
+                      }`}
+                      style={{ animationDelay: `${i * 60}ms` }}
+                    >
+                      {/* LEFT */}
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 ${
+                            isSpecial
+                              ? "bg-white/20"
+                              : accentStyles[m.accent]?.icon
+                          }`}
+                        >
+                          {m.icon}
+                        </div>
+
+                        <div>
+                          <p
+                            className={`font-bold text-base playfair ${isSpecial ? "text-white" : "text-[#1a1a1a]"}`}
+                          >
+                            {m.name}
+                          </p>
+                          <p
+                            className={`text-xs dmsans mt-0.5 ${isSpecial ? "text-white/60" : "text-gray-400"}`}
+                          >
+                            {m.duration}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* RIGHT */}
+                      <div className="text-right">
+                        <p
+                          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#1a1a1a]"}`}
+                        >
+                          {/* Original Price */}
+                          {typeof m.feeOriginal === "number" && (
+                            <span
+                              className={`line-through mr-2 text-[1.22rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
+                            >
+                              ₹{m.feeOriginal.toLocaleString()}/-
+                            </span>
+                          )}
+
+                          {/* Discounted Price */}
+                          <span>₹{m.fee.toLocaleString()}</span>
+                        </p>
+
+                        <p
+                          className={`text-[10px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
+                        >
+                          / plan
                         </p>
                       </div>
                     </div>

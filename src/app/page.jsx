@@ -1,15 +1,12 @@
 import HeroSection from "../components/home/HeroSection";
 import ServicesCards from "../components/home/ServicesCards";
 import GalleryPreview from "../components/home/GalleryItem";
-
 import BlogSection from "../components/home/BlogSection";
 import AboutSection from "../components/home/AboutSection";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import ExpertInstructorsSection from "../components/home/ExpertInstructorsSection";
 import AwardsSection from "../components/home/AwardsSection";
-
 import MainTrust from "../components/home/MainTrust";
-
 import AwardsAcedemy from "../components/home/AwardsAcedemy";
 import AnimatedImageCards from "../components/home/AnimatedImageCards";
 import AnimatedBackground from "../components/latout/AnimatedBackground";
