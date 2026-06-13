@@ -1,0 +1,265 @@
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  School,
+  Heart,
+  User,
+  GraduationCap,
+  Briefcase,
+  ArrowRight,
+  Layers,
+  Trophy,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+
+const FunctionCards = () => {
+  const services = [
+    {
+      id: 1,
+      icon: Trophy, // make sure Trophy is imported from lucide-react
+      title: "Competition Training",
+      description:
+        "Professional dance training programs designed to prepare individuals and teams for inter-school, college, and national-level competitions with advanced choreography and stage confidence development.",
+      accentColor: "var(--color-secondary)",
+      bubbleColor: "rgba(242, 139, 0, 0.1)",
+      link: "/competition-training",
+    },
+    {
+      id: 2,
+      icon: School,
+      title: "School Events",
+      description:
+        "Engaging and energetic dance performances choreographed specially for school annual functions, cultural programs, and competitions.",
+      accentColor: "var(--color-primary)",
+      bubbleColor: "rgba(246, 70, 108, 0.1)",
+      link: "/school-events",
+    },
+    {
+      id: 3,
+      icon: Heart,
+      title: "Wedding Events",
+      description:
+        "Beautiful and memorable wedding dance performances including bride-groom entries, family acts, and sangeet choreography.",
+      accentColor: "var(--color-secondary)",
+      bubbleColor: "rgba(242, 139, 0, 0.1)",
+      link: "/wedding-events",
+    },
+    {
+      id: 4,
+      icon: User,
+      title: "Personal Events",
+      description:
+        "Customized dance performances for birthdays, anniversaries, private parties, and special personal celebrations.",
+      accentColor: "var(--color-primary)",
+      bubbleColor: "rgba(246, 70, 108, 0.1)",
+      link: "/personal-events",
+    },
+    {
+      id: 5,
+      icon: GraduationCap,
+      title: "College Events",
+      description:
+        "High-energy and trendy dance performances for college fests, youth festivals, flash mobs, and stage shows.",
+      accentColor: "var(--color-secondary)",
+      bubbleColor: "rgba(242, 139, 0, 0.1)",
+      link: "/college-events",
+    },
+    {
+      id: 6,
+      icon: Briefcase,
+      title: "Corporate Events",
+      description:
+        "Professional and entertaining dance performances tailored for corporate events, annual meets, and brand promotions.",
+      accentColor: "var(--color-primary)",
+      bubbleColor: "rgba(246, 70, 108, 0.1)",
+      link: "/corporate-events",
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const floatingBubbleAnimation = {
+    y: [0, -15, 0],
+    x: [0, 10, 0],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  };
+
+  const router = useRouter();
+  const handleExplore = () => {
+    router.push("/services");
+  };
+
+  return (
+    <section className="py-20 md:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-20 h-1 mx-auto mb-4 rounded-full"
+            style={{
+              background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`,
+            }}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(246, 70, 108, 0.1), rgba(242, 139, 0, 0.1))",
+              borderColor: "var(--color-primary)",
+            }}
+          >
+            <Layers size={18} style={{ color: "var(--color-primary)" }} />
+            <span
+              className="text-sm font-semibold"
+              style={{ color: "var(--color-elegantDark)" }}
+            >
+              Services
+            </span>
+          </motion.div>
+          <h2
+            className="text-4xl md:text-6xl font-bold mb-4"
+            style={{ color: "var(--color-elegantDark)" }}
+          >
+            Our <span className="text-primary">Services</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover the perfect dance program tailored to your passion and
+            goals
+          </p>
+        </motion.div>
+
+        {/* Services Cards Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 "
+        >
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+                transition={{ duration: 0.3 }}
+                className="relative group"
+              >
+                <div className="relative  h-full bg-white/35 backdrop-blur-xl rounded-2xl p-8 px-4 shadow-xl border-2  border-primary overflow-hidden">
+                  <motion.div
+                    animate={floatingBubbleAnimation}
+                    className="absolute top-4 right-4 w-24 h-24 rounded-full blur-2xl opacity-50 pointer-events-none"
+                    style={{ background: service.bubbleColor }}
+                  />
+
+                  {/* Accent Bar */}
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                    className="w-12 h-1 rounded-full mb-6 origin-left"
+                    style={{ background: service.accentColor }}
+                  />
+
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{ rotate: 60, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
+                    style={{
+                      background: `linear-gradient(135deg, ${service.accentColor}, var(--color-secondary))`,
+                      boxShadow: `0 8px 20px ${service.bubbleColor}`,
+                    }}
+                  >
+                    <Icon className="w-8 h-8 text-white" />
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3
+                    className="text-2xl font-bold mb-3"
+                    style={{ color: "var(--color-elegantDark)" }}
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+
+                  {/* Decorative Corner Shape */}
+                  <svg
+                    className="absolute bottom-0 right-0 opacity-10 pointer-events-none"
+                    width="120"
+                    height="120"
+                    viewBox="0 0 120 120"
+                    fill="none"
+                  >
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="80"
+                      fill={service.accentColor}
+                    />
+                  </svg>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default FunctionCards;
