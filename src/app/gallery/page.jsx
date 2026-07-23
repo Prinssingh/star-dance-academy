@@ -80,7 +80,7 @@ function Gallery() {
 
       <VideoCarousel />
       <MainGallery />
-      <GalleryImg />
+      {/* <GalleryImg /> */}
       <GallerySectionTwo />
       <CTASection
         heading="Ready to Start Your"

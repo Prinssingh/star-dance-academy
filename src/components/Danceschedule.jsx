@@ -32,7 +32,7 @@ const batches = [
     id: "morning",
     session: "Morning",
     name: "Morning Session",
-    time: "8:30 – 10:00 AM",
+    time: "8:30 AM – 10:00 AM",
     duration: "90 min",
     fee: 1500,
     icon: "☀️",
@@ -44,7 +44,7 @@ const batches = [
     id: "girls",
     session: "Evening",
     name: "Girls Batch",
-    time: "04:00 – 05:00 PM",
+    time: "04:00 PM – 05:00 PM",
     duration: "60 min",
     fee: 1200,
     icon: "👧",
@@ -56,7 +56,7 @@ const batches = [
     id: "kids",
     session: "Evening",
     name: "Kids Batch",
-    time: "05:00 – 06:00 PM",
+    time: "05:00 PM – 06:00 PM",
     duration: "60 min",
     fee: 1200,
     icon: "🧒",
@@ -68,7 +68,7 @@ const batches = [
     id: "zumba",
     session: "Evening",
     name: "Zumba Batch",
-    time: "06:00 – 07:00 PM",
+    time: "06:00 PM – 07:00 PM",
     duration: "60 min",
     feeOriginal: 1800,
     fee: 1500,
@@ -81,7 +81,7 @@ const batches = [
     id: "combine",
     session: "Evening",
     name: "Combine Batch",
-    time: "07:00 – 08:00 PM",
+    time: "07:00 PM – 08:00 PM",
     duration: "60 min",
     fee: 1200,
     icon: "🕺",
@@ -93,7 +93,7 @@ const batches = [
     id: "special",
     session: "Evening",
     name: "Special Batch",
-    time: "08:00 – 09:30 PM",
+    time: "08:00 PM – 09:30 PM",
     duration: "60 min",
     feeOriginal: 2000,
     fee: 1800,
@@ -187,7 +187,6 @@ function BatchCard({ batch, index }) {
       {/* Fee top-right */}
       <div className="absolute right-4 top-4 text-right">
         <div className="grid grid-cols-1">
-
           {typeof batch.feeOriginal === "number" && (
             <span
               className={`line-through mr-2 text-[0.875rem] md:text-[1rem] ${isSpecial ? "text-gray-200" : "text-gray-500"}`}
@@ -195,20 +194,21 @@ function BatchCard({ batch, index }) {
               ₹{batch.feeOriginal.toLocaleString()}/-
             </span>
           )}
-        <p
-          className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
-        >
-          
-          {typeof batch.fee === "number" && (
-            <span className="text-[1.5rem]">₹{batch.fee.toLocaleString()}</span>
-          )}
-        </p>
+          <p
+            className={`bebas text-3xl tracking-wide ${isSpecial ? "text-white" : "text-[#f6466c]"}`}
+          >
+            {typeof batch.fee === "number" && (
+              <span className="text-[1.5rem]">
+                ₹{batch.fee.toLocaleString()}
+              </span>
+            )}
+          </p>
 
-        <p
-          className={`text-[9px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
-        >
-          / month
-        </p>
+          <p
+            className={`text-[9px] dmsans uppercase tracking-wider ${isSpecial ? "text-white/60" : "text-gray-400"}`}
+          >
+            / month
+          </p>
         </div>
       </div>
 
@@ -352,7 +352,7 @@ export default function DanceSchedule() {
                 </div>
 
                 <div className="shrink-0 md:mt-20 bg-[#f28b00]/20 border border-[#f28b00]/40 text-[#f28b00] bebas text-2xl tracking-wider px-6 py-3 rounded-full">
-                  8:30 – 10:00 AM
+                  8:30 AM – 10:00 AM
                 </div>
               </div>
 
@@ -396,7 +396,7 @@ export default function DanceSchedule() {
                 </div>
               </div>
 
-               {/* new ragistrations */}
+              {/* new ragistrations */}
               <div className="flex flex-col mb-3 gap-3">
                 {/* <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl bg-[#f28b00]/10 flex items-center justify-center text-lg">
@@ -520,8 +520,6 @@ export default function DanceSchedule() {
                   );
                 })}
               </div>
-
-             
 
               <div className="flex flex-col mt-9 gap-3">
                 <div className="flex items-center gap-3 mb-6">

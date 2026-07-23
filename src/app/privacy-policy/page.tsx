@@ -426,8 +426,11 @@ const floatingBubbleAnimation = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section
+    //   className="py-20 px-4 sm:px-6 lg:px-8
+    // "
+    >
+      <div className="w-full bg-black py-5 px-4 sm:px-6 lg:px-8 pt-30">
         {/* ── Section Header ── */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -459,17 +462,14 @@ export default function PrivacyPolicyPage() {
             }}
           >
             <Layers size={18} style={{ color: "var(--color-primary)" }} />
-            <span
-              className="text-sm font-semibold"
-              style={{ color: "var(--color-elegantDark)" }}
-            >
+            <span className="text-sm font-semibold" style={{ color: "#fff" }}>
               Legal
             </span>
           </motion.div>
 
           <h2
             className="text-4xl md:text-6xl font-bold mb-4"
-            style={{ color: "var(--color-elegantDark)" }}
+            style={{ color: "#fff" }}
           >
             Privacy <span className="text-primary">Policy</span>
           </h2>
@@ -491,15 +491,14 @@ export default function PrivacyPolicyPage() {
           >
             <RefreshCw size={13} style={{ color: "var(--color-primary)" }} />
             Last Updated:{" "}
-            <span
-              className="font-semibold"
-              style={{ color: "var(--color-elegantDark)" }}
-            >
+            <span className="font-semibold" style={{ color: "#fff" }}>
               {LAST_UPDATED}
             </span>
           </motion.div>
         </motion.div>
+      </div>
 
+      <div className="max-w-5xl mx-auto pt-15">
         {/* ── Cards ── */}
         <motion.div
           variants={containerVariants}

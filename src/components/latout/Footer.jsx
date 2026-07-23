@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, hover, motion } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -8,12 +8,18 @@ import {
   MessageCircle,
   ShieldCheck,
   FileText,
+  SquarePlay,
 } from "lucide-react";
+import { FaWhatsapp, FaInstagram,FaYoutube } from "react-icons/fa";
+
+
+
 import { useEffect, useState } from "react";
-import pic1 from "../../assets/footer/pic1.jpg";
+import pic1 from "../../assets/gallarytwo/imgtwo.jpg";
 import pic2 from "../../assets/footer/pic2.jpg";
-import pic3 from "../../assets/footer/pic3.jpg";
+import pic3 from "../../assets/thume-showcase.webp";
 import { useRouter } from "next/navigation";
+import TFPLogo from "../../assets/tfp-logo.png"
 import Link from "next/link";
 
 export default function Footer() {
@@ -45,16 +51,27 @@ export default function Footer() {
 
   const socialLinks = [
     {
-      icon: Instagram,
+      icon: FaInstagram,
+      hover: "hover:bg-pink-500",
       label: "Instagram",
       href: "https://www.instagram.com/star_dance_and_fitness_academy",
     },
     {
-      icon: MessageCircle,
+      icon: FaWhatsapp,
+      hover: "hover:bg-green-500",
       label: "WhatsApp",
       href: "https://wa.me/+916264249659",
     },
+
+    {
+      icon: FaYoutube,
+      label: "YouTube",
+      hover: "hover:bg-red-500",
+      href: "https://www.youtube.com/@rishisinghparihar4647",
+    },
   ];
+ 
+
 
 const footerLinks = [
   {
@@ -158,7 +175,8 @@ const footerLinks = [
                   <a
                     key={s.label}
                     href={s.href}
-                    className="w-10 h-10 border rounded-full flex items-center justify-center hover:text-primary transition"
+                    target="_blank"
+                    className={`w-10 h-10 border rounded-full flex items-center justify-center hover:text-primary transition`}
                   >
                     <Icon size={18} />
                   </a>
@@ -215,7 +233,7 @@ const footerLinks = [
               >
                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center overflow-hidden">
                   <img
-                    src="https://www.tfptechnologies.in/_next/static/media/logo2.2e00e4b8.png"
+                    src={TFPLogo.src}
                     alt="TFP Logo"
                     className="w-8 h-8 object-contain"
                   />

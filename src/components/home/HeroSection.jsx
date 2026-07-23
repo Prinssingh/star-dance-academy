@@ -7,12 +7,15 @@ import { useRouter } from "next/navigation";
 
 import ZigZagText1 from "../latout/ZigZagText1";
 import HeroDialog from "../HeroDialog";
+import HeroPicOne from "../../assets/thume-showcase.webp"
+import HeroPicTwo from "../../assets/gallarytwo/imgsix.jpg"
+import HeroPicThree from "../../assets/thume-showcase.png"
 
 const images = [
   "/assets/hero/dance-1.webp",
-  "/assets/hero/dance-2.webp",
-  "/assets/hero/dance-3.webp",
-  "/assets/hero/dance-4.webp",
+  HeroPicThree.src,
+  HeroPicOne.src,
+  HeroPicTwo.src,
   "/assets/hero/dance-5.webp",
 ];
 
@@ -101,39 +104,7 @@ const DanceAcademyHero = () => {
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
               <div className="flex cursor-pointer items-center justify-center gap-4 sm:gap-6 flex-nowrap">
-                {/* Watch Video */}
-                {/* <button
-                  onClick={() =>
-                    window.open(
-                      "https://www.youtube.com/watch?v=VIDEO_ID",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                  className="
-      group
-      flex items-center justify-center
-      gap-2 sm:gap-3
-      px-4 sm:px-6 lg:px-8
-      py-3 sm:py-4
-      border-2 border-primary
-      text-white
-      rounded-full
-      hover:bg-primary
-      transition-all duration-300
-      whitespace-nowrap
-      text-sm sm:text-base
-      font-semibold cursor-pointer
-    "
-                >
-                  <Play
-                    className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
-                    fill="currentColor"
-                  />
-                  <span className="leading-none">
-                    <ZigZagText1 text="Watch Video" />
-                  </span>
-                </button> */}
+
 
                 {/* Enroll Now */}
                 <motion.button
@@ -187,7 +158,7 @@ const DanceAcademyHero = () => {
           <div className="flex items-center gap-12">
             <div>
               <div className="text-xl lg:text-2xl font-bold text-primary">
-                <CountUP end={5670} />+
+                <CountUP end={500} />+
               </div>
               <div className="text-sm text-gray-400">Students</div>
             </div>

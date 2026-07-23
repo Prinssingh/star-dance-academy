@@ -25,20 +25,20 @@ const videos = [
   },
   {
     id: 3,
-    title: "Kids republic day Showcase",
+    title: "Kids Republic Day Showcase",
     description:
       "Our little stars shine bright in this heartwarming republic day performance filled with joy and pure talent.",
       embed: "https://www.youtube.com/embed/CgZq_ayV_jQ",
     tag: "Kids republic day",
-    tagColor: "dark",
+    tagColor: "pink",
   },
   {
     id: 4,
-    title: "couple dance",
+    title: "Couple Dance",
     description:
       "Two hearts, one rhythm — watch our couple dance light up the floor with effortless connection and magnetic chemistry.",
     embed: "https://www.youtube.com/embed/HkmOtJIZh6A",
-    tag: "Girls Batch",
+    tag: "Couple Batch",
     tagColor: "pink",
   },
   {

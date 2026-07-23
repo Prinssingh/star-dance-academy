@@ -8,6 +8,12 @@ import {
   Flame,
   HeartHandshake,
 } from "lucide-react";
+import Zumba from "../../assets/DanceClassesSection/zumba.webp"
+import FreeStyle from "../../assets/DanceClassesSection/free-style.webp"
+import HipHop from "../../assets/DanceClassesSection/hip-hop.webp"
+import Classical from "../../assets/DanceClassesSection/classical.webp"
+import Bollywood from "../../assets/DanceClassesSection/bollywood.crop.webp"
+import Contemporary from "../../assets/DanceClassesSection/contemporary.webp"
 
 export default function DanceClassesSection() {
   const classes = [
@@ -16,48 +22,44 @@ export default function DanceClassesSection() {
       name: "Hip Hop",
       description:
         "Urban street dance with high energy, powerful moves, and expressive freestyle elements.",
-      image:
-        "https://plus.unsplash.com/premium_photo-1710064217185-8351ee74d564?w=600&auto=format&fit=crop&q=60",
+      image: HipHop.src,
     },
     {
       icon: Sparkles,
       name: "Contemporary",
       description:
         "Fluid and expressive movement combining modern dance techniques with emotional storytelling.",
-      image:
-        "https://images.unsplash.com/photo-1550026593-cb89847b168d?w=600&auto=format&fit=crop&q=60",
+      image: Contemporary.src
     },
     {
       icon: Music,
       name: "Bollywood",
       description:
         "Vibrant Indian dance fusion with colorful expressions, dramatic moves, and cinematic flair.",
-      image:
-        "https://images.unsplash.com/photo-1463592177119-bab2a00f3ccb?w=600&auto=format&fit=crop&q=60",
+      image: Bollywood.src
     },
     {
       icon: Theater,
       name: "Kathak / Classical",
       description:
         "Traditional Indian classical dance with intricate footwork, graceful spins, and rich cultural heritage.",
-      image:
-        "https://images.unsplash.com/photo-1479812627010-aa5bd9d173b1?w=600&auto=format&fit=crop&q=60",
+      image: Classical.src
     },
     {
       icon: Flame,
       name: "Free Style",
       description:
         "Unleash your creativity with improvisational dance, blending multiple styles and personal expression.",
-      image:
-        "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80",
+      image: FreeStyle.src,
+      // image:
+      //   "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80",
     },
     {
       icon: Theater,
       name: "Zumba",
       description:
         "High‑energy fitness dance inspired by Latin rhythms and cardio movement.",
-      image:
-        "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&auto=format&fit=crop&q=60",
+      image: Zumba.src
     },
   ];
 
@@ -82,8 +84,8 @@ export default function DanceClassesSection() {
   return (
     <section className="relative py-20 px-4 bg-elegantLight overflow-hidden">
       {/* floating glow blobs */}
-      
-      
+
+
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* header */}
@@ -95,15 +97,15 @@ export default function DanceClassesSection() {
           className="text-center mb-16"
         >
           <motion.div
-                              initial={{ scaleX: 0 }}
-                              whileInView={{ scaleX: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.8, delay: 0.2 }}
-                              className="w-20 h-1 mx-auto mb-4 rounded-full"
-                              style={{ 
-                                background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
-                              }}
-                            />
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-20 h-1 mx-auto mb-4 rounded-full"
+            style={{
+              background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+            }}
+          />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

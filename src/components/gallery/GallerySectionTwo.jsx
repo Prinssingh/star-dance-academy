@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import picone from "../../assets/gallarytwo/imgone.jpg";
-import pictwo from "../../assets/gallarytwo/imgtwo.jpg";
-import picthree from "../../assets/gallarytwo/imgthree.jpg";
-import picfour from "../../assets/gallarytwo/imgfour.jpg";
-import picfive from "../../assets/gallarytwo/imgfive.jpg";
-import picsix from "../../assets/gallarytwo/imgsix.jpg";
-import picsaven from "../../assets/gallarytwo/imgseven.jpg";
+import picone from "../../assets/gallarytwo/bollywood-night.webp";
+import pictwo from "../../assets/DanceClassesSection/zumba.webp";
+import picthree from "../../assets/gallarytwo/kids-showcase.png";
+import picfour from "../../assets/gallarytwo/girlsbacth.png";
+import picfive from "../../assets/gallarytwo/sunday.webp";
+import picsix from "../../assets/gallarytwo/specialbatch.webp";
+import picsaven from "../../assets/gallarytwo/imgseven.webp";
 
 const images = [
   {
@@ -70,24 +70,24 @@ const images = [
   {
     id: 6,
     src: picfive.src,
-    title: "Special Batch",
+    title: "Sunday Cultural Workshop",
     description:
-      "Premium training sessions pushing boundaries every single night.",
-    tag: "Special",
+      "Celebrate dance, culture, and expression through engaging group sessions featuring Bollywood and folk-inspired choreography.",
+    tag: "Cultural",
     tagColor: "orange",
     size: "tall",
-    className: "sm:col-span-1 ",
+    className: "sm:col-span-1",
   },
   {
     id: 7,
     src: picsaven.src,
-    title: "Special Batch",
+    title: "Bollywood Fusion",
     description:
-      "Premium training sessions pushing boundaries every single night.",
-    tag: "Special",
+      "Energetic Bollywood choreography blending expressive movements, vibrant formations, and powerful stage presence.",
+    tag: "Bollywood",
     tagColor: "orange",
     size: "tall",
-    className: "sm:col-span-1 ",
+    className: "sm:col-span-1",
   },
 ];
 
@@ -123,7 +123,7 @@ function ImageCard({ image, index, onClick }) {
       <motion.img
         src={image.src}
         alt={image.title}
-        className="w-full h-full object-fil "
+        className="w-full h-full object-cover "
         whileHover={{ scale: 1.07 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         style={{ minHeight: "inherit" }}
@@ -247,14 +247,14 @@ function Lightbox({ image, onClose, onPrev, onNext }) {
               <div>
                 <span
                   className={`inline-block text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full mb-5 ${tagStyles[image.tagColor]}`}
-             
+
                 >
                   {image.tag}
                 </span>
                 <h2
                   className="text-white font-bold leading-tight mb-4"
                   style={{
-                   
+
                     fontSize: "clamp(22px, 4vw, 32px)",
                   }}
                 >
@@ -262,7 +262,7 @@ function Lightbox({ image, onClose, onPrev, onNext }) {
                 </h2>
                 <p
                   className="text-white/50 leading-relaxed text-sm"
-              
+
                 >
                   {image.description}
                 </p>
@@ -273,7 +273,7 @@ function Lightbox({ image, onClose, onPrev, onNext }) {
                 <button
                   onClick={onPrev}
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/8 border border-white/10 text-white/60 hover:bg-white/15 hover:text-white transition-all text-sm"
-  
+
                 >
                   <svg
                     className="w-4 h-4"
@@ -293,7 +293,7 @@ function Lightbox({ image, onClose, onPrev, onNext }) {
                 <button
                   onClick={onNext}
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#f6466c] text-white hover:bg-[#e03560] transition-all text-sm font-semibold"
-                 
+
                 >
                   Next
                   <svg
@@ -488,7 +488,7 @@ export default function GallerySectionTwo({ className }) {
                 <div className="absolute top-3 left-3">
                   <span
                     className={`text-[8px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full backdrop-blur-sm ${tagStyles[img.tagColor]}`}
-                   
+
                   >
                     {img.tag}
                   </span>
@@ -496,7 +496,7 @@ export default function GallerySectionTwo({ className }) {
                 <div className="absolute bottom-0 left-0 right-0 p-3">
                   <h3
                     className="text-white font-bold text-sm leading-tight"
-                   
+
                   >
                     {img.title}
                   </h3>
@@ -517,7 +517,7 @@ export default function GallerySectionTwo({ className }) {
           {[
             { num: "500+", label: "Students Trained", color: "pink" },
             { num: "50+", label: "Performances", color: "orange" },
-            { num: "8", label: "Batch Timings", color: "dark" },
+            { num: "8", label: "Batch Timings", color: "pink" },
           ].map((stat, i) => (
             <div
               key={i}

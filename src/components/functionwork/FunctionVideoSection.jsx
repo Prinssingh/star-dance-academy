@@ -7,7 +7,7 @@ export default function FunctionVideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   
   // Replace with your actual video URL or embed code
-  const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+  const videoUrl = "https://www.youtube.com/embed/-eNq4X2WiF4?si=bvNUIENCA7yQ6ST8";
   const thumbnailUrl = "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80";
 
   return (
@@ -86,7 +86,7 @@ export default function FunctionVideoSection() {
             style={{ borderColor: 'var(--color-secondary)' }}
           >
             {/* Video or Thumbnail */}
-            {isPlaying ? (
+          
               <div className="relative w-full aspect-video bg-black ">
                 <iframe
                   className="absolute inset-0 w-full h-full"
@@ -96,53 +96,9 @@ export default function FunctionVideoSection() {
                   allowFullScreen
                 />
               </div>
-            ) : (
-              <div className="relative w-full aspect-video bg-black group cursor-pointer">
-                {/* Thumbnail */}
-                <img
-                  src={thumbnailUrl}
-                  alt="Function performance thumbnail"
-                  className="w-full h-full object-cover"
-                />
+            
 
-               
-
-                {/* Play button */}
-                <motion.button
-                  onClick={() => setIsPlaying(true)}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="absolute inset-0 flex cursor-pointer items-center justify-center "
-                  aria-label="Play video"
-                >
-                  <motion.div
-                    initial={{ scale: 1 }}
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ 
-                      duration: 2, 
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl"
-                    style={{
-                      background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`
-                    }}
-                  >
-                    <Play className="w-10 h-10 md:w-14 md:h-14 text-white ml-1" fill="white" />
-                  </motion.div>
-                </motion.button>
-
-                {/* Corner decorative accents */}
-                <div 
-                  className="absolute top-0 left-0 w-24 h-24 opacity-20"
-                  
-                />
-                <div 
-                  className="absolute bottom-0 right-0 w-32 h-32 opacity-20"
-                  
-                />
-              </div>
-            )}
+             
 
            
           </div>

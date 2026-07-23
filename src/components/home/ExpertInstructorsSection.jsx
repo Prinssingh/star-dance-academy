@@ -10,8 +10,6 @@ import {
 } from "lucide-react";
 import Rishi from "../../assets/instructors/rishi.webp";
 import ShubhamSingh from "../../assets/instructors/shubhamsingh.webp";
-import SamSingh from "../../assets/instructors/samrajput.crop.jpg";
-import ankitsir from "../../assets/instructors/ankitsir.webp";
 import aaditya from "../../assets/instructors/aditya.png";
 import anurag from "../../assets/instructors/anurag.png";
 
@@ -26,23 +24,7 @@ const ExpertInstructorCard = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const cardRef = useRef(null);
 
-  const handleToggle = () => {
-    if (!isExpanded) {
-      setTimeout(() => {
-        cardRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-        });
-      }, 150);
-    }
-    setIsExpanded((prev) => !prev);
-  };
-
-  const socialIcons = {
-    instagram: Instagram,
-    facebook: Facebook,
-    youtube: Youtube,
-  };
+ 
 
   return (
     <motion.div
@@ -195,54 +177,8 @@ const ExpertInstructorsSection = () => {
         youtube: "#",
       },
     },
-    {
-      image: ankitsir.src,
-      name: "Ankit Rawat",
-      // role: "Hip Hop Instructor",
-      shortBio:
-        "Highly skilled hip-hop dancer with expertise in street dance styles.",
-
-      fullBio:
-        "An accomplished dance professional with extensive experience in hip-hop and street dance. Has participated in high-level competitions, stage performances, and creative collaborations with fellow artists.",
-
-      socialLinks: {
-        instagram: "#",
-        facebook: "#",
-        youtube: "#",
-      },
-    },
-    {
-      image: SamSingh.src,
-      name: "Sam Singh Rajput",
-      // role: "Hip Hop Instructor",
-      shortBio:
-        "Professionally trained dancer with 4 years of advanced learning in Delhi.",
-
-      fullBio:
-        "Holds a professional Hip-Hop diploma from a recognized Delhi dance studio. Has been selected for major dance camps and platforms such as Hustle Hood, Dance Deewane Season 03, and Jashn-e-Kala, gaining valuable stage and performance experience.",
-
-      socialLinks: {
-        instagram: "#",
-        facebook: "#",
-        youtube: "#",
-      },
-    },
-    {
-      image: aaditya.src,
-      name: "Aditya Verma",
-      // role: "Hip Hop Instructor",
-      shortBio:
-        "Professionally trained dancer with 4 years of advanced learning in Delhi. Finilist in Dance Master india Season 4",
-
-      fullBio:
-        "A passionate dance professional focused on hip-hop and street dance training. Known for energetic teaching methods and helping students build confidence, rhythm, and performance skills.",
-
-      socialLinks: {
-        instagram: "#",
-        facebook: "#",
-        youtube: "#",
-      },
-    },
+    
+   
   ];
 
   return (

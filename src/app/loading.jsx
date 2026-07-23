@@ -2,7 +2,7 @@
 
 export default function Loader() {
   return (
-    <div className="fixed  inset-0 z-50 flex flex-col items-center justify-center overflow-hidden bg-linear-to-br from-black via-gray-900 to-black">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden bg-linear-to-br from-black via-gray-900 to-black">
       {/* Ambient background glow */}
       <div className="absolute inset-0 bg-linear-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 blur-[140px]" />
 

@@ -1,41 +1,40 @@
 "use client";
 import { useState, useEffect } from "react";
-import { GraduationCap, Heart, Music, Star, Zap } from "lucide-react";
-import { motion } from 'framer-motion';
-import { div } from "framer-motion/client";
+import {  Heart, Music, PersonStanding, Star, User, Zap } from "lucide-react";
+
 
 const testimonialsData = [
   {
     id: 1,
-    icon: GraduationCap,
+    icon: User,
     title: "Ananya Sharma, Student",
     description:
       "Joining Star Dance Academy was the best decision I’ve made. The instructors don't just teach steps; they help you find your own rhythm and build incredible confidence.",
   },
   {
     id: 2,
-    icon: Heart,
+    icon: User,
     title: "Rahul & Sneha, Couple",
     description:
       "We were so nervous about our first dance, but the trainers here made it feel like second nature. They turned our awkward steps into a graceful, memory-filled performance!",
   },
   {
     id: 3,
-    icon: Zap,
+    icon: User,
     title: "Vikram Mehra, Fitness Enthusiast",
     description:
       "The energy in the Zumba sessions is unmatched! It’s the one hour of my day where I can completely let go, have fun, and get a killer workout all at the same time.",
   },
   {
     id: 4,
-    icon: Star,
+    icon: User,
     title: "Priya Das, Parent",
     description:
       "I’ve seen such a positive change in my daughter's posture and discipline since she started her classical training here. The academy feels like a supportive second family.",
   },
   {
     id: 5,
-    icon: Music,
+    icon: User,
     title: "Ishaan Gupta, Aspiring Performer",
     description:
       "The level of professionalism here is top-tier. Whether it's contemporary or hip-hop, the focus on technique and stage presence has truly prepared me for the spotlight.",

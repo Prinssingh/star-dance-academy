@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Rishi from "../../assets/instructors/rishi.webp";
 import ShubhamSingh from "../../assets/instructors/shubhamsingh.webp";
-import SamSingh from "../../assets/instructors/samrajput.crop.jpg";
 
 const founders = [
   {
@@ -48,23 +47,7 @@ const founders = [
       { title: "Creative", subtitle: "Choreography", icon: "star" },
     ],
   },
-  {
-    name: "Sam Singh Rajput",
-    role: "Co-Founder & Training Head",
-    image: SamSingh.src,
-    description:
-      "Sam is a professionally trained dancer with 4 years of advanced training in Delhi, specializing in hip-hop.",
-    stats: [
-      { title: "4+ Years", subtitle: "Professional Training", icon: "trophy" },
-      { title: "Hip-Hop", subtitle: "Diploma Certified", icon: "star" },
-      {
-        title: "Camp Selection",
-        subtitle: "Hustle • Josh-A-Kala",
-        icon: "users",
-      },
-      { title: "Dance Deewane", subtitle: "Season 03", icon: "music" },
-    ],
-  },
+  
 ];
 
 const iconMap = {

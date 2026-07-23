@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Share2, X } from "lucide-react";
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, } from "react-icons/fa";
 
 export default function FixedButtons() {
   const [open, setOpen] = useState(false);

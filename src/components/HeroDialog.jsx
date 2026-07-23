@@ -136,6 +136,7 @@ I'm interested in joining the Dance Academy.
                   type="text"
                   name="name"
                   value={formData.name}
+                  autoComplete="name"
                   onChange={handleChange}
                   placeholder="Full Name"
                   required
@@ -148,6 +149,7 @@ I'm interested in joining the Dance Academy.
                   value={formData.age}
                   onChange={handleChange}
                   placeholder="Age"
+                  min={4}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-black border border-zinc-700 focus:border-primary outline-none"
                 />
@@ -159,7 +161,9 @@ I'm interested in joining the Dance Academy.
                   required
                   className="w-50 lg:w-full px-4 py-3 rounded-lg bg-black border border-zinc-700 focus:border-primary outline-none"
                 >
-                  <option value="" disabled>Select Gender</option>
+                  <option value="" disabled>
+                    Select Gender
+                  </option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
@@ -170,6 +174,7 @@ I'm interested in joining the Dance Academy.
                   name="dancestyle"
                   value={formData.dancestyle}
                   onChange={handleChange}
+                  autoComplete="off"
                   placeholder="Dance Type"
                   required
                   className="w-full px-4 py-3 rounded-lg bg-black border border-zinc-700 focus:border-primary outline-none"
@@ -180,6 +185,7 @@ I'm interested in joining the Dance Academy.
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  autoComplete="tel"
                   placeholder="Phone Number"
                   onInput={(e) => {
                     e.currentTarget.value = e.currentTarget.value
